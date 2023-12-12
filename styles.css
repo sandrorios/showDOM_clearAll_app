@@ -66,6 +66,11 @@ button:hover {
     display: flex;
     justify-content: space-between;
     width: 45%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin: 0 5px 20px;
+    font-weight: 700;
 }
 
 #clear {
