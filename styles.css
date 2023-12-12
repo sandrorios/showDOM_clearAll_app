@@ -57,7 +57,16 @@ button:hover {
     background-color: #444;
 }
 
-
+.items {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.items li {
+    display: flex;
+    justify-content: space-between;
+    width: 45%;
+}
 
 #clear {
     margin-top: 20px;
