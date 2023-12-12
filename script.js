@@ -24,4 +24,18 @@ function addItemToDOM(item) {
     inputField.focus();
 }
 
+function addItemToStorage(item){
+    let itemsfromStorage;
+    if(localStorage.getItem('items') === null){
+        itemsfromStorage = [];
+    }else{
+        itemsfromStorage = JSON.parse(localStorage.getItem('items'));
+    }
+
+        itemsfromStorage.push(item);
+        localStorage.setItem('items', JSON.stringify(itemsfromStorage));
+}
+
+
+
 formItem.addEventListener('submit', onAddItemSubmit);
