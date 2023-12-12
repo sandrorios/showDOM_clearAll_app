@@ -3,6 +3,10 @@ const listItem = document.getElementById('list-item');
 const inputField = document.getElementById('input-field');
 const clearBtn = document.getElementById('clear');
 
+function displayItems(){
+    let itemsFromStorage = getItemsFromStorage();
+    itemsFromStorage.forEach((item) => addItemToDOM(item));
+}
 function onAddItemSubmit(e){
     e.preventDefault();
     const newItem = inputField.value;
@@ -51,3 +55,4 @@ function clearItems() {
 
 formItem.addEventListener('submit', onAddItemSubmit);
 clearBtn.addEventListener('click', clearItems);
+document.addEventListener('DOMContentLoaded', displayItems);
