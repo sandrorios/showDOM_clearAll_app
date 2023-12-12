@@ -12,7 +12,7 @@ function onAddItemSubmit(e){
     }
 
     addItemToDOM(newItem)
-    addItemToStorage(newItem);
+    // addItemToStorage(newItem);
 
 }
 
@@ -24,18 +24,12 @@ function addItemToDOM(item) {
     inputField.focus();
 }
 
-function addItemToStorage(item){
-    let itemsfromStorage;
-    if(localStorage.getItem('items') === null){
-        itemsfromStorage = [];
-    }else{
-        itemsfromStorage = JSON.parse(localStorage.getItem('items'));
+function clearItems() {
+    while(listItem.firstChild){
+        listItem.firstChild.remove(listItem.firstChild)
     }
-
-        itemsfromStorage.push(item);
-        localStorage.setItem('items', JSON.stringify(itemsfromStorage));
 }
 
 
-
 formItem.addEventListener('submit', onAddItemSubmit);
+clearBtn.addEventListener('click', clearItems);
